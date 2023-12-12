@@ -8,6 +8,6 @@ public interface VagasService {
 
     public Vagas saveVagas(Vagas vagas);
     public List<Vagas> getVagas();
-
     void delete(Integer id_vagas);
+
 }
