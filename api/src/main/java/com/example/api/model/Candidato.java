@@ -10,10 +10,17 @@ public class Candidato {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_candidato;
 
+    @Column(unique = true)
     private String cpf_candidato;
     private String nome_candidato;
+
+    @Column(unique = true)
     private String email_candidato;
     private String senha_candidato;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "perfil_candidato_id", referencedColumnName = "id_perfilcandidato")
+    private PerfilCandidato perfilCandidato;
 
     public Candidato(){
 
