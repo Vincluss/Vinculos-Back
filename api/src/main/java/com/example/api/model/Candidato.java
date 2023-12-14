@@ -8,20 +8,22 @@ public class Candidato {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@Column(name = "id_candidato")
     private int id_candidato;
 
-    @Column(unique = true)
+    //@Column(name = "cpf_candidato")
     private String cpf_candidato;
+
     private String nome_candidato;
 
-    @Column(unique = true)
+    //@Column(name = "email_candidato")
     private String email_candidato;
+
     private String senha_candidato;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "perfil_candidato_id", referencedColumnName = "id_perfilcandidato")
+/*
+    @OneToOne(mappedBy = "candidato", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private PerfilCandidato perfilCandidato;
-
+*/
     public Candidato(){
 
     }
@@ -65,4 +67,13 @@ public class Candidato {
     public void setSenha_candidato(String senha_candidato) {
         this.senha_candidato = senha_candidato;
     }
+
+    /*  public PerfilCandidato getPerfilCandidato() {
+        return perfilCandidato;
+    }
+
+    public void setPerfilCandidato(PerfilCandidato perfilCandidato) {
+        this.perfilCandidato = perfilCandidato;
+    }
+*/
 }

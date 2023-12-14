@@ -32,4 +32,9 @@ public class PerfilCandidatoController {
         return result;
     }
 
+    @DeleteMapping("/{id_perfilcandidato}")
+    public void delete(@PathVariable Integer id_perfilcandidato){
+        perfilCandidadoService.delete(id_perfilcandidato);
+    }
+
 }

@@ -23,10 +23,12 @@ public class PerfilCandidato {
     private String logradouro;
     private String cidade;
     private String bairro;
-    private String conhecimento;
+    private String conhecimentos;
     private String sobre;
 
-    @OneToOne(mappedBy = "perfilCandidato", cascade = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name = "id_candidato")
+
     private Candidato candidato;
 
     public PerfilCandidato(){
@@ -145,12 +147,12 @@ public class PerfilCandidato {
         this.bairro = bairro;
     }
 
-    public String getConhecimento() {
-        return conhecimento;
+    public String getConhecimentos() {
+        return conhecimentos;
     }
 
-    public void setConhecimento(String conhecimento) {
-        this.conhecimento = conhecimento;
+    public void setConhecimentos(String conhecimentos) {
+        this.conhecimentos = conhecimentos;
     }
 
     public String getSobre() {
